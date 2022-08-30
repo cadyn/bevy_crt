@@ -13,3 +13,6 @@ Do note that the plugin will create a camera which it expects you to use for you
 # Credit
 The original shaders used in this project were created by someone known as guest.r on the libretro forums. I've done the work of adapting them to work with the Bevy engine, but I did not create these shaders myself.
 Original forum post: https://forums.libretro.com/t/new-crt-shader-from-guest-crt-guest-advanced-updates/25444
+
+# License
+Everything under the src folder was written by me or adapted from the Bevy source code and/or examples. It is licensed under the MIT License.
