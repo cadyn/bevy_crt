@@ -1,11 +1,11 @@
 [package]
 name = "bevy_crt"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Cadyn"]
 description = "A package for the bevy engine which enables the use of a CRT effect."
 readme = "README.md"
-license = "MIT"
+license = "GPL-3.0-or-later"
 license-file = "LICENSE"
 keywords = ["bevy", "gamedev", "graphics"]
 categories = ["game-development"]

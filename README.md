@@ -15,4 +15,4 @@ The original shaders used in this project were created by someone known as guest
 Original forum post: https://forums.libretro.com/t/new-crt-shader-from-guest-crt-guest-advanced-updates/25444
 
 # License
-Everything under the src folder was written by me or adapted from the Bevy source code and/or examples. It is licensed under the MIT License.
+Everything under the src folder was written by me or adapted from the Bevy source code and/or examples. All of my code is licensed under GPL 3.0, as well as the shaders provided in the assets folder.
