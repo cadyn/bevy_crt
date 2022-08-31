@@ -16,3 +16,6 @@ Original forum post: https://forums.libretro.com/t/new-crt-shader-from-guest-crt
 
 # License
 Everything under the src folder was written by me or adapted from the Bevy source code and/or examples. All of my code is licensed under GPL 3.0, as well as the shaders provided in the assets folder.
+
+# Note
+This project is likely going to be on the sideline for a bit. There are definitely improvements I want to make, but I only created this package to use it in my current main project which is https://github.com/cadyn/Pong-Multiplayer-RS I will be keeping an eye here for an issues which prevent use of the package and fixing them as well as updating it alongside my main project. The big things like giving more fine tuned control over the shaders and perhaps trying to make the code more readable and maintainable are likely going to have wait until I've reached a point in my main project where I'm more fine with shifting focus.
