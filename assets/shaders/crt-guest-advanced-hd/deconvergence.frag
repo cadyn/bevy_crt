@@ -180,6 +180,11 @@
 //#pragma parameter post_br "          Post Brightness" 1.0 0.25 5.0 0.01
 #define post_br 1.0
 
+#define scanline_width 0.01
+
+#define max_scanline_intensity 0.6
+
+#define scanline_sharpness 0.75
 
 #define COMPAT_TEXTURE(b,c,d) texture(sampler2D(b,c),d)
 #define TEX0 vTexCoord
@@ -644,6 +649,23 @@ void main()
 		if (noisetype < 0.5) color = mix(color, noise0, 0.25*abs(addnoised) * rc); 
 		else color = min(color * mix(1.0, 1.5*noise0.x, 0.5*abs(addnoised)), 1.0);
 	}
+
+	vec3 c = color*vig*humbar(mix(pos.y, pos.x, bardir))*post_br*corner(pos0);
+
+	//Scanlines, added by Cadyn.
+
+	// May look complicated and spooky to the uninitiated with modular arithmetic. 
+	// All scanline_intensity_linear is doing is getting the distance between y and the nearest number that is congruent to scanline_width/2 mod scanline_width
+	// And then putting it between the range of -1 and 1. Finally, we set the minimum to 0 so everything below 0 will just be set to 0.
+	float scanline_intensity_linear = max(abs((4*(vTexCoord.y % scanline_width)/scanline_width) - 2) - 1, 0.0);
+	// Changing the properties of the curve.
+	float scanline_intensity_full = smoothstep(0.0,1.0,pow(scanline_intensity_linear,scanline_sharpness));
+	//Then we properly restrict it to its max intensity
+	float scanline_intensity = scanline_intensity_full * max_scanline_intensity;
+
+	//If you want to get a better visual intuition for what's happening here, I used this graph to tune this curve https://www.desmos.com/calculator/wdwl2tdb44
+
+	c = c * (1 - scanline_intensity);
 	
-	FragColor = vec4(color*vig*humbar(mix(pos.y, pos.x, bardir))*post_br*corner(pos0), 1.0);
+	FragColor = vec4(c, 1.0);
 }

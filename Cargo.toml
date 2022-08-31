@@ -1,6 +1,6 @@
 [package]
 name = "bevy_crt"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
 authors = ["Cadyn"]
 description = "A package for the bevy engine which enables the use of a CRT effect."
