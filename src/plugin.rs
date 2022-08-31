@@ -499,5 +499,6 @@ fn setup_post_stage<M: Material2d> (
             },
             ..Camera2dBundle::default()
         })
-        .insert(layer);
+        .insert(layer)
+        .insert(UiCameraConfig { show_ui: false }); //TODO: Make UI rendering configurable, along with a lot of other things.
 }
